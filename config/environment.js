@@ -16,8 +16,21 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    mapbox: {
+      accessToken: 'pk.eyJ1Ijoid2lsYnVybmZvcmNlIiwiYSI6InUzTmxaNHcifQ.TfoRyRJIHvzqV3HwSGEp9w',
+    },
+    contentSecurityPolicy: {
+        'img-src': "'self' blob:* data: *.mapbox.com",
+        'child-src': "blob:",
+        'connect-src': "'self' *.mapbox.com *.mockable.io",
+        'font-src': "'self' *.cloudflare.com fonts.gstatic.com data:application/*",
+        'style-src': "'self' 'unsafe-inline' *.cloudflare.com fonts.googleapis.com",
+        'script-src': "'self' 'unsafe-eval' *.cloudflare.com"
     }
   };
+
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

@@ -1,0 +1,18 @@
+<div class="ui grid shadow master-grid">
+  <div class="four wide column blue search-grid">
+    <div class="ui grid padded">
+      <div class="wide column">
+        {{partial "search"}}
+      </div>
+    </div>
+  </div>
+  <div class="twelve wide column white results">
+    <div class="ui two attached buttons">
+      {{#link-to "developments.table" class="ui button"}}Table{{/link-to}}
+      {{#link-to "developments.map" class="ui button"}}Map{{/link-to}}
+    </div>
+    <div class="container">
+      {{outlet}}
+    </div>
+  </div>
+</div>

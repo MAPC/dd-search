@@ -1,0 +1,14 @@
+<table class="ui table selectable results-table">
+  <thead>
+    <tr><th>Name</th>
+    <th>Completion Year</th>
+  </tr></thead>
+  <tbody>
+    {{#each development in model}}
+    <tr {{action "mouseover" development on='mouseEnter'}}>
+      <td>{{development.name}}</td>
+      <td>{{development.year}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -8,16 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{content-for 'head'}}
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.13.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/dd-explore.css">
 
     {{content-for 'head-footer'}}
+
   </head>
   <body>
     {{content-for 'body'}}
-
+    <div id="emberapp"></div>
     <script src="assets/vendor.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.13.1/mapbox-gl.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
     <script src="assets/dd-explore.js"></script>
 
     {{content-for 'body-footer'}}
