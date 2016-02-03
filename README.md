@@ -6,4 +6,4 @@ This is the main repository for one of the Development Database's key features: 
 
 ## Development
 
-Run `ember install` then `ember serve`. The project is set up with a mock API server at localhost:4200/api. To compile the file product, run `ember build`. This builds a JavaScript file inside the /dist folder. 
+Run `ember install` then `ember serve`. The project is set up with a mock API server at localhost:4200/api. To compile the final product, run `ember build`. This builds a JavaScript file inside the /dist folder. 
