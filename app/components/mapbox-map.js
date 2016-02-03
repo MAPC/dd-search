@@ -4,7 +4,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     highlightPoint(e) {
-      var projected = this.map.project([e.get("x"),e.get("y")])
+
+      var projected = this.map.project([parseFloat(e.get("latitude")),parseFloat(e.get("longitude"))])
       this.drawPopup(projected);
     }
   },
@@ -50,7 +51,9 @@ export default Ember.Component.extend({
     var features = [];
 
     this.get("developments").forEach((development) => {
-      var coordinates = [development.get("x"), development.get("y")];
+      console.log((development.get("latitude")), (development.get("longitude")));
+      var coordinates = [parseFloat(development.get("latitude")), parseFloat(development.get("longitude"))];
+      console.log(coordinates);
       var properties = {  municipality: development.get("municipality"), 
                           name: development.get("name"), 
                           id: development.get("id"), 
@@ -83,9 +86,6 @@ export default Ember.Component.extend({
   }.observes("developments"),
 
   didInsertElement: function() {
-    this.get("mapToGeoJSON").features.forEach(function(feature) {
-      console.log(feature.geometry);
-    });
 
     // access token
     mapboxgl.accessToken = 'pk.eyJ1Ijoid21hdHRnYXJkbmVyIiwiYSI6Ii1icTRNT3MifQ.WnayxAOEoXX-jWsNmHUhyg';
@@ -103,7 +103,7 @@ export default Ember.Component.extend({
       cluster: false,
       data: this.get("mapToGeoJSON") 
     });
-
+    console.log(this.get("mapToGeoJSON"));
     // load markers
     this.map.on('style.load', () => {
       // Add marker data as a new GeoJSON source.

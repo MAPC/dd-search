@@ -23,10 +23,10 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
         'img-src': "'self' blob:* data: *.mapbox.com",
         'child-src': "blob:",
-        'connect-src': "'self' *.mapbox.com *.mockable.io",
+        'connect-src': "'self' api.lvh.me:5000 localhost:4200 *.mapbox.com *.mockable.io",
         'font-src': "'self' *.cloudflare.com fonts.gstatic.com data:application/*",
         'style-src': "'self' 'unsafe-inline' *.cloudflare.com fonts.googleapis.com",
-        'script-src': "'self' 'unsafe-eval' *.cloudflare.com"
+        'script-src': "'self' 'unsafe-eval' *.mapbox.com *.cloudflare.com"
     }
   };
 
