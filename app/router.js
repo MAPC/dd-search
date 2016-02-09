@@ -6,14 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.resource('searches', { path: '/' }, function() {
-  //   this.resource('search', { path: '/searches/:search_id' });
-  //   // this.route('new');
-  // }); 
-  this.resource('developments', function() {
-    this.route('map');
-    this.route('table');
-  });
+    this.resource('developments', { path: 'developments/search' }, function() {
+      this.route('map');
+      this.route('table');
+    });
 });
 
 export default Router;

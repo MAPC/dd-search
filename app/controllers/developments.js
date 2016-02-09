@@ -1,25 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ["year", "tothu", "sqft","name","address","municipality","redevelopment","saved", "status"],
+  queryParams: ["year_compl", "tothu", "commsf","rdv", "status"],
   itemActions: ["Complete", "Construction", "Projected", "Planned"],
-  year: null,
+  year_compl: null,
   tothu: null,
-  sqft: null,
+  commsf: null,
   name: null,
   address: null,
   municipality: null,
-  redevelopment: null,
+  rdv: null,
   saved: null,
   status: null,
   rangedProperties: [
     {
-      name: "year",
+      name: "year_compl",
       min: "yearFrom",
       max: "yearTo"
     },
     {
-      name: "sqft",
+      name: "commsf",
       min: "sqftFrom",
       max: "sqftTo"
     },

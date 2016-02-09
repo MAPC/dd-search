@@ -1,4 +1,4 @@
-<button {{action "reset"}} class="fluid ui button green">New Search</button>
+
 <form class="ui form inverted">
   {{range-field-group from=yearFrom to=yearTo min=1990 max=2050 from_max=2050 label="Year:"}}
   <div class="ui divider"></div>
@@ -41,7 +41,7 @@
   <div class="field">
     <div class="ui slider checkbox">
       <label>Redevelopment</label>
-      {{input type="checkbox" checked=redevelopment}}
+      {{input type="checkbox" checked=rdv}}
     </div>
   </div>
   <div class="field">
@@ -54,4 +54,5 @@
   <button {{action 'search'}} class="ui button">
     Search
   </button>
+  <button {{action "reset"}} class="fluid ui button green">Clear Search</button>
 </form>

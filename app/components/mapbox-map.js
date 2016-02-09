@@ -4,8 +4,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     highlightPoint(e) {
-
-      var projected = this.map.project([parseFloat(e.get("latitude")),parseFloat(e.get("longitude"))])
+      var projected = this.map.project([e.get("latitude"),e.get("longitude")])
       this.drawPopup(projected);
     }
   },
@@ -51,9 +50,7 @@ export default Ember.Component.extend({
     var features = [];
 
     this.get("developments").forEach((development) => {
-      console.log((development.get("latitude")), (development.get("longitude")));
-      var coordinates = [parseFloat(development.get("latitude")), parseFloat(development.get("longitude"))];
-      console.log(coordinates);
+      var coordinates = [development.get("latitude"), development.get("longitude")];
       var properties = {  municipality: development.get("municipality"), 
                           name: development.get("name"), 
                           id: development.get("id"), 
