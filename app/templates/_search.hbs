@@ -1,4 +1,7 @@
-
+<h3 class="ui horizontal inverted divider header">
+  <i class="filter icon"></i>
+  Search Filters
+</h3>
 <form class="ui form inverted">
   {{range-field-group from=yearFrom to=yearTo min=1990 max=2050 from_max=2050 label="Year:"}}
   <div class="ui divider"></div>
@@ -50,9 +53,23 @@
       {{input type="checkbox" checked=saved}}
     </div>
   </div>
+
   <div class="ui divider"></div>
-  <button {{action 'search'}} class="ui button">
-    Search
-  </button>
-  <button {{action "reset"}} class="fluid ui button green">Clear Search</button>
+
+  <div class="two ui buttons">
+    <button {{action 'search'}} class="ui green button">
+      Search
+    </button>
+
+  </div>
+
+  <button {{action "reset"}} class="fluid ui button red">Clear Search</button>
+
+  <h3 class="ui horizontal inverted divider header">
+    <i class="star icon"></i>
+    Saved Searches
+  </h3>
+  <button {{action 'search'}} class="ui fluid teal button">Save</button>
+  <button {{action 'toggle'}} class="ui fluid green button">View Past Searches</button>
+
 </form>

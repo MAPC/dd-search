@@ -1,5 +1,5 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
-  host: 'http://api.lvh.me:5000'
+  host: 'http://localhost:4200/api'
 });
