@@ -11,10 +11,10 @@ export default Ember.Route.extend({
       $('.ui.sidebar').sidebar('toggle');
     },
     transitionToSaved: function(search) {
-      console.log("search: ", search);
       var queryObject = search.get("parsed");
       this.transitionTo("/developments/search/table" + queryObject);
       this.refresh();
+      this.send("toggle");
 
     } 
   }
