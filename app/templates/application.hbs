@@ -1,5 +1,8 @@
 {{#ui-sidebar class="ui left inverted vertical menu sidebar"}}
-  {{#each model as |search|}}
+	<a style="pointer-events: none;" class="header item">
+		Your Saved Searches
+	</a>
+  {{#each model.searches as |search|}}
     <a {{action 'transitionToSaved' search}} class="item">
       {{search.name}}
     </a>  
@@ -9,3 +12,4 @@
 <div class="ui pusher large masthead">
   {{outlet}}
 </div>
+{{partial "save-search"}}

@@ -11,7 +11,6 @@ export default Ember.Route.extend({
       }
     });
 
-    console.log(queryObject);
     return this.store.query("development", queryObject);
   },
   actions: {

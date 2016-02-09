@@ -2,8 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    alert(window.API_KEY);
-    return this.store.find("search");
+    var api_key = document.API_KEY;
+    return Em.RSVP.hash({
+      searches: this.store.find("search", { api_key: api_key }),
+      search: this.store.createRecord("search")
+    });
+    // return this.store.find("search", { api_key: api_key });
   },
   actions: {
     toggle: function(direction) {
@@ -16,6 +20,9 @@ export default Ember.Route.extend({
       this.refresh();
       this.send("toggle");
 
-    } 
+    },
+    nameSearch() {
+      $('.ui.modal').modal('show');
+    }
   }
 });
