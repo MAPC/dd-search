@@ -1,4 +1,4 @@
-{{#ui-modal name="search" class="save-search" onApprove=(action 'saveSearch') onDeny=(action 'cancelSearch')}}
+{{#ui-modal class="save-search" onApprove=(action 'saveSearch') onDeny=(action 'cancelSearch')}}
   <i class="close icon"></i>
   <div class="header">
     First, Name This Search:
@@ -8,7 +8,7 @@
       <div class="ui header">Give your search a descriptive name that's easy to remember.</div>
 
         <div class="ui input fluid">
-          {{input value=model.search.name}}
+          {{input value=name}}
         </div>
 
     </div>

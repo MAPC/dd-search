@@ -12,7 +12,7 @@ module.exports = function(app) {
                   self: "http://api.lvh.me:5000/searches/1"
                   },
                   attributes: {
-                    "parsed": "?tothu=[1,200]",
+                    "parsed": "tothu=[1,200]",
                     "name": "Housing Demand Research",
                     "query": {
                       filter: {
@@ -28,7 +28,7 @@ module.exports = function(app) {
                   self: "http://api.lvh.me:5000/searches/2"
                   },
                   attributes: {
-                    "parsed": "?commsf=[100,2000]",
+                    "parsed": "commsf=[100,2000]",
                     "name": "Commercial Square FEet",
                     "query": {
                       filter: {
@@ -50,8 +50,8 @@ module.exports = function(app) {
         self: "http://api.lvh.me:5000/searches/1"
         },
         attributes: {
-          "parsed": "?tothu=[1,200]",
-          "name": "Housing Demand Research",
+          "parsed": "tothu=[1,200]",
+          "name": "Other Research",
           "query": {
             filter: {
               tothu: [1,200]

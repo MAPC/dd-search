@@ -1,14 +1,13 @@
-{{#ui-sidebar class="ui left inverted vertical menu sidebar"}}
+{{#ui-sidebar class="ui left inverted vertical menu sidebar" searches=model.searches}}
 	<a style="pointer-events: none;" class="header item">
 		Your Saved Searches
 	</a>
-  {{#each model.searches as |search|}}
+  {{#each model key="@index" as |search|}}
     <a {{action 'transitionToSaved' search}} class="item">
       {{search.name}}
     </a>  
   {{/each}}
 {{/ui-sidebar}}
-
 <div class="ui pusher large masthead">
   {{outlet}}
 </div>

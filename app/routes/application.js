@@ -2,12 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    var api_key = document.API_KEY;
-    return Em.RSVP.hash({
-      searches: this.store.find("search", { api_key: api_key }),
-      search: this.store.createRecord("search")
-    });
-    // return this.store.find("search", { api_key: api_key });
+    return  this.store.findAll("search");
   },
   actions: {
     toggle: function(direction) {
@@ -15,8 +10,8 @@ export default Ember.Route.extend({
       $('.ui.sidebar').sidebar('toggle');
     },
     transitionToSaved: function(search) {
-      var queryObject = search.get("parsed");
-      this.transitionTo("/developments/search/table" + queryObject);
+      var parsed = search.get("parsed");
+      this.transitionTo("/developments/search/table?" + parsed);
       this.refresh();
       this.send("toggle");
 
@@ -28,9 +23,12 @@ export default Ember.Route.extend({
       $('.ui.modal').modal('hide');
     },
     postSearch() {
-      var model = this.controllerFor("application").get("model").search;
+      var controller = this.controllerFor("application");
+      var parsed = window.location.href.split("?")[1];
+      var search = this.store.createRecord("search", { name: controller.get("name"), parsed: parsed })
 
-      model.save().then((model) => {
+      search.save().then((response) => {
+        controller.set("name", null);
         this.send("closeSearchModal");
       });
     },
