@@ -42,7 +42,24 @@ module.exports = function(app) {
   });
 
   searchRouter.post('/', function(req, res) {
-    res.status(201).end();
+    res.status(201).send({
+      'data': {
+        id: "3",
+        type: "searches",
+        links: {
+        self: "http://api.lvh.me:5000/searches/1"
+        },
+        attributes: {
+          "parsed": "?tothu=[1,200]",
+          "name": "Housing Demand Research",
+          "query": {
+            filter: {
+              tothu: [1,200]
+            }
+          }
+        }
+      }
+    })
   });
 
   searchRouter.get('/:id', function(req, res) {

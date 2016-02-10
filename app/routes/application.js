@@ -23,6 +23,19 @@ export default Ember.Route.extend({
     },
     nameSearch() {
       $('.ui.modal').modal('show');
+    },    
+    closeSearchModal() {
+      $('.ui.modal').modal('hide');
+    },
+    postSearch() {
+      var model = this.controllerFor("application").get("model").search;
+
+      model.save().then((model) => {
+        this.send("closeSearchModal");
+      });
+    },
+    cancelSaveSearch() {
+
     }
   }
 });
