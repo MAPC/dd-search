@@ -17,11 +17,8 @@ export default Ember.Route.extend({
 
     },
     nameSearch() {
-      $('.ui.modal').modal('show');
+      $('.ui.modal.save-search').modal('show');
     },    
-    closeSearchModal() {
-      $('.ui.modal').modal('hide');
-    },
     postSearch() {
       var controller = this.controllerFor("application");
       var parsed = window.location.href.split("?")[1];
@@ -29,11 +26,10 @@ export default Ember.Route.extend({
 
       search.save().then((response) => {
         controller.set("name", null);
-        this.send("closeSearchModal");
       });
     },
-    cancelSaveSearch() {
-
+    deleteSearch(search) {
+      search.destroyRecord();
     }
   }
 });

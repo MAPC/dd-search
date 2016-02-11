@@ -8,6 +8,17 @@ export default Ember.Controller.extend({
     },
     cancelSearch() {
     	this.send("cancelSaveSearch");
+    },
+    closeSearchModal() {
+      $('.ui.modal').modal('hide');
+    },
+    deleteSearch(search) {
+      $('.ui.modal.delete-search')
+        .modal({
+          onApprove() {
+            search.destroyRecord();
+          }
+        }).modal("show")
     }
 	},
   searches: function() {
